@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aroma</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <style>
+      .bg-hover-scale:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+      .card-body {
+        background-color: rgba(211, 223, 225, 0.689);
+      }
+
+      .box-btn a {
+        text-decoration: none;
+        color: #fff;
+        padding: 0px 0px;
+        border-radius: 5px;
+        font-size: 20px;
+      }
+
+      .modal {
+        visibility: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 90%;
+        max-width: 550px;
+        height: 550px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .modal-img {
+        width: 100%;
+      }
+      .modal-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+      }
+
+      .close-btn a {
+        text-decoration: none;
+        color: #5e6469;
+        font-size: 30px;
+      }
+
+      .modal:target {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-md bg-dark sticky-top border-bottom"
+      data-bs-theme="dark"
+      style="min-height: 80px; font-size: 1.25rem"
+    >
+      <div class="container">
+        <a class="navbar-brand d-md-none" href="#">
+          <svg class="bi" width="32" height="32" aria-hidden="true">
+            <use xlink:href="#aperture"></use>
+          </svg>
+          <span style="font-size: 1.5rem">TERRAZA 11</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas"
+          aria-controls="offcanvas"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvas"
+          aria-labelledby="offcanvasLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">TERRAZA 11</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav flex-grow-1 justify-content-between">
+              <li class="nav-item">
+                <a class="nav-link" href="#" aria-label="Aperture">
+                  <h5 class="offcanvas-title" id="offcanvasLabel">
+                    T11 PERFUMES
+                  </h5>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Inicio</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="./Todos.html">Todos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://wa.me/573005239992"
+                  >Contáctanos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Donde estamos.html"
+                  >¿Dónde estamos?</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" aria-label="Cart">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    fill="currentColor"
+                    class="bi bi-cart"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section
+        class="py-5 text-center container"
+        style="
+          background-image: url('./HOME/Home\ 1.jpg');
+          background-size: cover;
+          background-position: center;
+          width: 100 vw;
+        "
+      >
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 18px;
+                padding: 2rem;
+              "
+            >
+              <h1 class="fw-light">Envios a toda Barranquilla</h1>
+              <p class="lead text-body-secondary">
+                Para hacer pedidos y ver nuevas referencias contactanos por
+                Whatsapp
+              </p>
+              <p>
+                <a
+                  href="https://wa.me/573005239992"
+                  class="btn my-2"
+                  style="background-color: #00bb2d; color: #fff; border: none"
+                >
+                  Whatsapp
+                </a>
+                <a
+                  href="https://wa.me/573005239992"
+                  class="btn btn-secondary my-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-whatsapp"
+                    viewBox="0 0 18 18"
+                  >
+                    <path
+                      d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
+                    />
+                  </svg>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="box-btn">
+              <a href="#mymodal1">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Versace Eros.jpg"
+                      alt="Versace Eros"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Versace Eros Eau de Toilette</h3>
+                      <h4>400.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary box-btn"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal1" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Versace Eros review.png" />
+                    </div>
+                    <div>
+                      <h2>Versace Eros Eau de Toilette 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal2">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Versace Eros Flame.jpg"
+                      alt="Versace Eros"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Versace Eros Flame</h3>
+                      <h4>380.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal2" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Versace Eros Flame review.png" />
+                    </div>
+                    <div>
+                      <h2>Versace Eros Flame 100 ml</h2>
+                      <p>Original con número de serie y QR verificables</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal3">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/His confession.jpg"
+                      alt="His Confession"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">His Confession</h3>
+                      <h4>320.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal3" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/His Confession review.png" />
+                    </div>
+                    <div>
+                      <h2>His Confession 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal4">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Light Blue Caballero.jpg"
+                      alt="Light Blue Caballero"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Light Blue Caballero</h3>
+                      <h4>360.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal4" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Light Blue Caballero review.png" />
+                    </div>
+                    <div>
+                      <h2>Light Blue Caballero 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal5">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/212 vip.jpg"
+                      alt="212 VIP Black"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">212 VIP Black</h3>
+                      <h4>600.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal5" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/212 VIP Black.png" />
+                    </div>
+                    <div>
+                      <h2>212 VIP Black 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal10">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Issey miyake.jpg"
+                      alt="Issey Miyake Pour Homme"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">
+                        L'Eau d'Issey Pour Homme Issey Miyake
+                      </h3>
+                      <h4>300.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal10" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Issey Miyake Pour Homme review.png" />
+                    </div>
+                    <div>
+                      <h2>L'Eau d'Issey Pour Homme Issey Miyake 125ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal11">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Issey miyake intense.jpg"
+                      alt="Issey miyake Pour Homme intense"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">
+                        L'Eau d'Issey Pour Homme Issey Miyake intense
+                      </h3>
+                      <h4>260.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal11" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img
+                        src="./REVIEWS/Issey Mitake Pour Homme Intense review.png"
+                      />
+                    </div>
+                    <div>
+                      <h2>
+                        L'Eau d'Issey Pour Homme Issey Miyake intense 125ml
+                      </h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal12">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/9PM.jpg"
+                      alt="9 PM"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">9PM Afnan</h3>
+                      <h4>230.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal12" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/9 PM review.png" />
+                    </div>
+                    <div>
+                      <h2>9PM Afnan 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal20">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Nautica Voyage.jpg"
+                      alt="Nautica Voyage"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Nautica Voyage</h3>
+                      <h4>130.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal20" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Natutica Voyage review.png" />
+                    </div>
+                    <div>
+                      <h2>Nautica Voyage 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box-btn">
+              <a href="#mymodal21">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Odessay Mandarina Sky.jpg"
+                      alt="Odessay Mandarina Sky"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h4 class="card-text">Odyssey Mandarina Sky Armaf</h4>
+                      <h4>230.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal21" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Odessay Mandarina Sky.png" />
+                    </div>
+                    <div>
+                      <h2>Odyssey Mandarina Sky Armaf 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box-btn">
+              <a href="#mymodal22">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Odyssey Homme.jpg"
+                      alt="Odyssey Homme"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Odyssey Homme Armaf</h3>
+                      <h4>250.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal22" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Odyssey Homme review.png" />
+                    </div>
+                    <div>
+                      <h2>Odyssey Homme Armaf 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal26">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Club de nuit iconic.jpg"
+                      alt="Club de Nuit Iconic"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Club de Nuit Blue Iconic Armaf</h3>
+                      <h4>310.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal26" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Club de Nuit Iconic review.png" />
+                    </div>
+                    <div>
+                      <h2>Club de Nuit Blue Iconic Armaf 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal30">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Asad Zanzibar.jpg"
+                      alt="Asad Zanzibar"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Asad Zanzibar Lattafa</h3>
+                      <h4>225.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal30" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Asad Zanzibar review.png" />
+                    </div>
+                    <div>
+                      <h2>Asad Zanzibar Lattafa 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal32">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/TOY BOY.jpg"
+                      alt="Lacoste Essential"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Toy Boy Moschino</h3>
+                      <h4>410.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal32" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/TOY BOY Review.png" />
+                    </div>
+                    <div>
+                      <h2>Toy Boy Moschino 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal36">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Lacoste Red.jpg"
+                      alt="Lacoste Red"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Lacoste Red</h3>
+                      <h4>300.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal36" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Lacoste red review.png" />
+                    </div>
+                    <div>
+                      <h2>Lacoste Red 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal37">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/The Kingdom.jpg"
+                      alt="The Kingdom"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">The Kingdom</h3>
+                      <h4>235.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal37" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/The Kingdom review.png" />
+                    </div>
+                    <div>
+                      <h2>The Kingdom 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal41">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/L'Aventure.jpg"
+                      alt="L'Aventure black"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">L'Aventure black</h3>
+                      <h4>210.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal41" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/L'aventure Black review.png" />
+                    </div>
+                    <div>
+                      <h2>L'Aventure black 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal42">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Hawas ice.jpg"
+                      alt="Hawas ice"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Hawas for Him ice</h3>
+                      <h4>260.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal42" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Hawas ice review.png" />
+                    </div>
+                    <div>
+                      <h2>Hawas for Him ice 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal43">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Hawas men.jpg"
+                      alt="Hawas men"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Hawas man</h3>
+                      <h4>250.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal43" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Hawas for him review.png" />
+                    </div>
+                    <div>
+                      <h2>Hawas men 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal45">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Ferragamo black.jpg"
+                      alt="Ferragamo Black"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Ferragamo Black</h3>
+                      <h4>220.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal45" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Ferragamo Black review.png" />
+                    </div>
+                    <div>
+                      <h2>Ferragamo Black 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal46">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Ferragamo free time.jpg"
+                      alt="Ferragamo Free time"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">Ferragamo Free time</h3>
+                      <h4>200.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal46" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Ferragamo Free time review.png" />
+                    </div>
+                    <div>
+                      <h2>Ferragamo Free time 100ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-btn">
+              <a href="#mymodal48">
+                <div class="col">
+                  <div class="card bg-hover-scale">
+                    <img
+                      src="./HOMBRES/Al haramain amberoud aqua Dubai night.jpg"
+                      alt="Al Haramain Amberoud aqua Dubai night"
+                      class="img-fluid card-img-top"
+                      style="height: 300px; object-fit: cover"
+                    />
+                    <div class="card-body">
+                      <h3 class="card-text">
+                        Al Haramain Amberoud aqua Dubai night
+                      </h3>
+                      <h4>410.000 cop</h4>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver más
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div></a
+              >
+              <div id="mymodal48" class="modal">
+                <div class="modal-content">
+                  <div class="close-btn">
+                    <a class="modal_close" href="#">&times;</a>
+                  </div>
+                  <div class="slider-box">
+                    <div class="modal-img">
+                      <img src="./REVIEWS/Al Haramain Amberoud review.png" />
+                    </div>
+                    <div>
+                      <h2>Al Haramain Amberoud aqua Dubai night 75ml</h2>
+                      <p class="lead text-body-secondary">
+                        Perfume original con número de serie y QR verificables
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

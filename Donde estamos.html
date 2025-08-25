@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-md bg-dark sticky-top border-bottom"
+      data-bs-theme="dark"
+      style="min-height: 80px; font-size: 1.25rem"
+    >
+      <div class="container">
+        <a class="navbar-brand d-md-none" href="#">
+          <svg class="bi" width="32" height="32" aria-hidden="true">
+            <use xlink:href="#aperture"></use>
+          </svg>
+          <span style="font-size: 1.5rem">TERRAZA 11</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas"
+          aria-controls="offcanvas"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvas"
+          aria-labelledby="offcanvasLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">TERRAZA 11</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav flex-grow-1 justify-content-between">
+              <li class="nav-item">
+                <a class="nav-link" href="#" aria-label="Aperture">
+                  <svg class="bi" width="32" height="32" aria-hidden="true">
+                    <use xlink:href="#aperture"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Todos.html">Todos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://wa.me/573005239992"
+                  >Contáctanos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Quienes somos.html"
+                  >¿Quiénes somos?</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Donde estamos.html"
+                  >¿Dónde estamos?</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" aria-label="Cart">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    fill="currentColor"
+                    class="bi bi-cart"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+      <div>
+        <h1 class="display-4 fw-bold text-body-emphasis">
+          Estamos en Barranquilla
+        </h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-5">
+            Encuentranos en Cra. 46 #93-180, Riomar, Barranquilla, Atlántico
+          </p>
+        </div>
+      </div>
+      <div class="overflow-hidden" style="max-height: 600vh">
+        <div class="map_container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.4395146271577!2d-74.83098012424473!3d11.005613489157449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d0005991b21%3A0xc7e20037f1101517!2sTERRAZA%2011%20Barber%20Club!5e0!3m2!1ses!2sco!4v1754779206679!5m2!1ses!2sco"
+            width="80%"
+            height="600px"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
